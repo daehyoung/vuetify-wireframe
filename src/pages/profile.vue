@@ -2,11 +2,11 @@
   <v-container>
     <v-card class="mx-auto" max-width="800">
       <v-card-title class="text-h4">
-        About
+        User Profile
       </v-card-title>
       <v-card-text>
         <p class="text-body-1">
-          Welcome to the About page. This page uses the user layout.
+          Welcome to the User Profile page. This page uses the user layout.
         </p>
       </v-card-text>
     </v-card>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "about"
+  name: "user-profile"
 }
 </script>
 

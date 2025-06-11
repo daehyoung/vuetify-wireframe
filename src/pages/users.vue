@@ -1,9 +1,16 @@
 <template>
-  <v-sheet>
-    <v-card>
-      <v-card-title>users.vue</v-card-title>
+  <v-container>
+    <v-card class="mx-auto" max-width="800">
+      <v-card-title class="text-h4">
+        User Management
+      </v-card-title>
+      <v-card-text>
+        <p class="text-body-1">
+          Welcome to the User Management page. This page uses the admin layout.
+        </p>
+      </v-card-text>
     </v-card>
-  </v-sheet>
+  </v-container>
 </template>
 
 <script>

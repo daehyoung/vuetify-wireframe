@@ -7,49 +7,35 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 import { setupLayouts } from 'virtual:generated-layouts'
+import AdminLayout from '@/layouts/admin.vue'
+import UserLayout from '@/layouts/user.vue'
 import AdminHome from '@/pages/admin-home.vue'
-import UserHome from '@/pages/user-home.vue'
 import Codes from '@/pages/codes.vue'
 import Users from '@/pages/users.vue'
-import About from '@/pages/about.vue'
-import UserProfile from "@/pages/user-profile.vue";
+import UserHome from '@/pages/user-home.vue'
+import UserProfile from '@/pages/profile.vue'
+import About from "@/pages/about.vue";
+
 const routes = [
   {
-    path: '/',
-    redirect: '/user-home',
+    path: '/admin',
+    component: AdminLayout,
+    children: [
+      { path: '', component: AdminHome },
+      { path: 'codes', component: Codes },
+      { path: 'users', component: Users },
+    ]
   },
   {
-    path: '/user-home',
-    component: UserHome,
-    meta: { layout: 'user' }
+    path: '/user',
+    component: UserLayout,
+    children: [
+      { path: '', component: UserHome },
+      { path: 'profile', component: UserProfile },
+      { path: 'about', component: About },
+    ]
   },
-  {
-    path: '/admin-home',
-    component: AdminHome,
-    meta: { layout: 'admin' }
-  },
-  {
-    path: '/codes',
-    component: Codes,
-    meta: { layout: 'admin' }
-  },
-  {
-    path: '/users',
-    component: Users,
-    meta: { layout: 'admin' }
-  },
-  {
-    path: '/about',
-    component: About,
-    meta: { layout: 'user' }
-  },
-
-  {
-    path: '/user-profile',
-    component: UserProfile,
-    meta: { layout: 'user' }
-  },
-  // ... 기타 라우트
+  { path: '/', redirect: '/user' }
 ]
 
 const router = createRouter({
