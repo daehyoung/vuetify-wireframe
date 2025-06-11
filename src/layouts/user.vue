@@ -10,13 +10,17 @@
         <v-tab
           v-for="(tab, i) in tabs"
           :key="`tab-${i}`"
+          :to="tab.to"
         >
-          {{ tab.label }}
+          {{ tab.title }}
         </v-tab>
       </v-tabs>
 
       <v-spacer />
+      <v-btn icon="mdi-logout" to="/logout" class="ml-auto"></v-btn>
       <v-btn icon="mdi-shield-account" to="/admin" class="ml-auto"></v-btn>
+
+
     </v-app-bar>
 
     <!-- Drawer: v-model 바인딩 필요 -->
@@ -65,8 +69,9 @@ const items = [
 ]
 
 const tabs = [
-  { label: 'Default' },
-  { label: 'Grow' },
-  { label: 'Shift' },
+  // {
+  //   title: 'Admin',
+  //   to: '/admin',
+  // }
 ]
 </script>

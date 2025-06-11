@@ -15,6 +15,8 @@ import Users from '@/pages/users.vue'
 import UserHome from '@/pages/user-home.vue'
 import UserProfile from '@/pages/profile.vue'
 import About from "@/pages/about.vue";
+import Login from "@/pages/login.vue";
+import Logout from "@/pages/logout.vue";
 
 const routes = [
   {
@@ -35,7 +37,15 @@ const routes = [
       { path: 'about', component: About },
     ]
   },
-  { path: '/', redirect: '/user' }
+  {
+    path: '/', redirect: '/user'
+  },
+  {
+    path: '/login',   component: Login,
+  },
+  {
+    path: '/logout',   component: Logout,
+  }
 ]
 
 const router = createRouter({

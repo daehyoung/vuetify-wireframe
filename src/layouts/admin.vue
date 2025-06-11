@@ -5,6 +5,20 @@
       <v-btn icon="mdi-home" to="/admin"></v-btn>
       <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer" />
       <v-app-bar-title>Admin Home</v-app-bar-title>
+
+
+      <v-tabs>
+        <v-tab
+          v-for="(tab, i) in tabs"
+          :key="`tab-${i}`"
+          :to="tab.to"
+        >
+          {{ tab.title }}
+        </v-tab>
+      </v-tabs>
+
+      <v-spacer />
+      <v-btn icon="mdi-logout" to="/logout" class="ml-auto"></v-btn>
       <v-btn icon="mdi-account" to="/user"></v-btn>
     </v-app-bar>
 
@@ -42,5 +56,14 @@ const items = [
     title: 'Users',
     to: '/admin/users',
   }
+]
+
+
+
+const tabs = [
+  // {
+  //   title: 'User',
+  //   to: '/user',
+  // }
 ]
 </script>
